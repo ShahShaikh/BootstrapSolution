@@ -104,7 +104,11 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="CustomeStyle.css" />
     <Content Include="FormBootstrap.html" />
+    <Content Include="MegaMenu.html" />
+    <Content Include="MobileOffCanvasNavbar.html" />
+    <Content Include="MobileOffCanvasWAccordianMenu.html" />
     <Content Include="ModalPopup.html" />
+    <Content Include="OffCanvasHover.html" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -128,6 +132,7 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="My Project\PublishProfiles\Default Settings.pubxml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />

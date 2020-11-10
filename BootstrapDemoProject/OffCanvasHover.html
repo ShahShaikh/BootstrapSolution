@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .screen-overlay {
+            height: 100%;
+            z-index: 30;
+            position: fixed;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            background-color: rgba(34, 34, 34, 0.6);
+            transition: opacity .2s linear, visibility .1s, width 1s ease-in;
+        }
+
+            .screen-overlay.show {
+                transition: opacity .5s ease, width 0s;
+                opacity: 1;
+                width: 100%;
+                visibility: visible;
+            }
+
+        .offcanvas {
+            width: 350px;
+            visibility: hidden;
+            transform: translateX(-100%);
+            transition: all .2s;
+            border-radius: 0;
+            box-shadow: 0 5px 10px rgba(0,0,0, .2);
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            z-index: 1200;
+            background-color: #fff;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+
+            .offcanvas.show {
+                visibility: visible;
+                transform: translateX(0);
+                transition: transform .2s;
+            }
+    </style>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <b class="screen-overlay"></b>
+
+    <!-- offcanvas panel -->
+    <aside class="offcanvas" id="my_offcanvas1">
+        <header class="p-4 bg-light border-bottom">
+            <button class="btn btn-outline-danger btn-close"> &times Close </button>
+            <h6 class="mb-0">First offcanvas </h6>
+        </header>
+        <nav class="list-group list-group-flush">
+            <a href="#" class="list-group-item">Home</a>
+            <a href="#" class="list-group-item">About us</a>
+            <a href="#" class="list-group-item">Menu name 1</a>
+            <a href="#" class="list-group-item">Menu name 2</a>
+            <a href="#" class="list-group-item">Menu name 3</a>
+        </nav>
+    </aside>
+    <script>
+        $("[data-trigger]").on("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var offcanvas_id = $(this).attr('data-trigger');
+            $(offcanvas_id).toggleClass("show");
+            $('body').toggleClass("offcanvas-active");
+            $(".screen-overlay").toggleClass("show");
+        });
+
+        $(".btn-close, .screen-overlay").click(function (e) {
+            $(".screen-overlay").removeClass("show");
+            $(".offcanvas").removeClass("show");
+            $("body").removeClass("offcanvas-active");
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+
+    </script>
+    <script src="Scripts/bootstrap.js"></script>
+</body>
+</html>
